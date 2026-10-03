@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "shelf",
+    "harness",
+    "mcp",
+]
+resolver = "2"

@@ -1,0 +1,10 @@
+/target/
+**/*.rs.bk
+*.redb
+*.redb.lock
+*.jsonl
+__pycache__/
+*.pyc
+.DS_Store
+experiment_results.json
+arch/

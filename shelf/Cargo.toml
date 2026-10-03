@@ -1,0 +1,11 @@
+[package]
+name = "shelf"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+sha2 = "0.10"
+blake2 = "0.10"
+redb = "4.1.0"
+memmap2 = "0.9"
+
