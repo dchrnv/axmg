@@ -1,5 +1,9 @@
 # axmg (Axiom Gemini) — Universal Merkle Memory Engine
 
+[![CI](https://github.com/dchrnv/axmg/actions/workflows/ci.yml/badge.svg)](https://github.com/dchrnv/axmg/actions/workflows/ci.yml)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
+[![Release](https://img.shields.io/badge/release-v0.1.0--core-green.svg)](https://github.com/dchrnv/axmg/releases)
+
 > **«Говорилка чужая — память своя. Не ширма с проектором, а честный локальный append-only стор».**
 
 `axmg` — это легковесный, автономный и математически строгий движок ассоциативной памяти и обнаружения структуры, написанный на Rust. Система преобразует непрерывные потоки байт (текст диалогов, логи, код, телеметрию датчиков) в детерминированный **Merkle DAG** повторяющихся композиций, динамически удерживает живой контекст через забывание шума и предоставляет интерфейсы памяти через **Model Context Protocol (MCP)** для локальных LLM (Ollama, llama.cpp, vLLM) и агентных сред (OpenClaw).
