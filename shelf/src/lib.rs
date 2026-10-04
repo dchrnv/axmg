@@ -18,7 +18,7 @@
 //! println!("Ассоциации: {}", recall.context_string);
 //! ```
 //!
-//! Для глубокого руководства по интеграции см. `docs/LIBRARY_GUIDE.md`.
+//! Для глубокого руководства по интеграции см. `docs/GUIDE.md`.
 
 pub mod context;
 pub mod cooc;

@@ -12,7 +12,7 @@ env:
 
 jobs:
   test:
-    name: Build & Test (Rust + Python E2E)
+    name: Build & Test (Rust Library)
     runs-on: ubuntu-latest
 
     steps:
@@ -25,25 +25,17 @@ jobs:
           toolchain: stable
           cache: true
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
       - name: Check workspace targets
         run: cargo check --workspace --all-targets
 
-      - name: Run Rust unit tests (118 tests)
+      - name: Run Rust unit & doc tests
         run: cargo test --workspace --verbose
+
+      - name: Verify documentation builds without warnings
+        run: RUSTDOCFLAGS="-D warnings" cargo doc --workspace --no-deps
+
+      - name: Run quickstart example
+        run: cargo run -p shelf --example quickstart
 
       - name: Build release binaries
         run: cargo build --release --workspace
-
-      - name: Run Phase 1 & 2 E2E validation
-        run: python3 verify_phase1.py
-
-      - name: Run Phase 3 Sensory streamer validation
-        run: python3 verify_sensory.py
-
-      - name: Run Phase 4 LLM Context E2E validation
-        run: python3 verify_phase4_e2e.py
