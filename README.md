@@ -1,9 +1,10 @@
 # axmg — Universal Merkle DAG Associative Memory Engine
 
+[![Crates.io](https://img.shields.io/crates/v/axmg.svg)](https://crates.io/crates/axmg)
+[![Docs.rs](https://docs.rs/axmg/badge.svg)](https://docs.rs/axmg)
 [![CI](https://github.com/dchrnv/axmg/actions/workflows/ci.yml/badge.svg)](https://github.com/dchrnv/axmg/actions/workflows/ci.yml)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
 [![Rust: 2024](https://img.shields.io/badge/Rust-2024-orange.svg)](https://www.rust-lang.org)
-[![Status: Stable v0.1.0](https://img.shields.io/badge/status-stable%20v0.1.0-green.svg)](https://github.com/dchrnv/axmg)
 
 > **Embedded, deterministic, zero-vocabulary associative memory engine for Rust.**
 
@@ -26,13 +27,11 @@ No vector databases. No embedding models. No dictionaries. 100% deterministic an
 
 ## 🚀 Quickstart
 
-Add `shelf` (the core engine crate) to your `Cargo.toml`:
+Add `axmg` to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-shelf = { path = "shelf" }
-# Or via git:
-# axmg = { package = "shelf", git = "https://github.com/dchrnv/axmg", branch = "main" }
+axmg = "0.1.0"
 ```
 
 ### Basic Usage
