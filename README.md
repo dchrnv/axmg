@@ -1,13 +1,24 @@
-# axmg — Universal Merkle DAG Associative Memory Engine
+<div align="center">
 
-[![Crates.io](https://img.shields.io/crates/v/axmg.svg)](https://crates.io/crates/axmg)
-[![Docs.rs](https://docs.rs/axmg/badge.svg)](https://docs.rs/axmg)
-[![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-ghcr.io-blue?logo=github)](https://github.com/dchrnv/axmg/pkgs/container/axmg)
-[![CI](https://github.com/dchrnv/axmg/actions/workflows/ci.yml/badge.svg)](https://github.com/dchrnv/axmg/actions/workflows/ci.yml)
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
-[![Rust: 2024](https://img.shields.io/badge/Rust-2024-orange.svg)](https://www.rust-lang.org)
+# `axmg`
 
-> **Embedded, deterministic, zero-vocabulary associative memory engine for Rust.**
+### Universal Merkle DAG Associative Memory Engine
+
+[![Crates.io](https://img.shields.io/crates/v/axmg.svg?style=flat-square&color=fc6d26)](https://crates.io/crates/axmg)
+[![Docs.rs](https://img.shields.io/docsrs/axmg?style=flat-square&logo=docsdotrs)](https://docs.rs/axmg)
+[![GitHub Packages](https://img.shields.io/badge/ghcr.io-axmg-blue?style=flat-square&logo=docker)](https://github.com/dchrnv/axmg/pkgs/container/axmg)
+[![GitHub Release](https://img.shields.io/github/v/release/dchrnv/axmg?style=flat-square&logo=github&color=blueviolet)](https://github.com/dchrnv/axmg/releases/latest)
+[![CI](https://github.com/dchrnv/axmg/actions/workflows/ci.yml/badge.svg?style=flat-square)](https://github.com/dchrnv/axmg/actions/workflows/ci.yml)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg?style=flat-square)](LICENSE)
+[![Rust: 2024](https://img.shields.io/badge/Rust-2024%20Edition-red.svg?style=flat-square&logo=rust)](https://www.rust-lang.org)
+
+**Embedded, deterministic, zero-vocabulary associative memory engine for Rust.**
+
+[Quickstart](#-quickstart) • [Architecture](#-architecture--data-flow) • [API Cheat Sheet](#-api-cheat-sheet) • [Guide](docs/GUIDE.md) • [Invariants](INVARIANTS.md)
+
+</div>
+
+---
 
 `axmg` converts raw byte streams (text, logs, code, sensor telemetry) into a cryptographic **Merkle DAG (SHA-256)**, dynamically maintains active working memory through temporal noise eviction ($K=3$ epochs), calculates online information-theoretic surprise, and enables instant semantic recall via co-occurrence graphs (PPMI).
 
@@ -28,11 +39,20 @@ No vector databases. No embedding models. No dictionaries. 100% deterministic an
 
 ## 🚀 Quickstart
 
+### 1. Add as a Rust Dependency
+
 Add `axmg` to your `Cargo.toml`:
 
 ```toml
 [dependencies]
 axmg = "0.1.0"
+```
+
+### 2. Or Run Pre-Built via GitHub Packages
+
+```bash
+docker pull ghcr.io/dchrnv/axmg:latest
+docker run --rm -it ghcr.io/dchrnv/axmg:latest
 ```
 
 ### Basic Usage
