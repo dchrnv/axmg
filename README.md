@@ -2,6 +2,7 @@
 
 [![Crates.io](https://img.shields.io/crates/v/axmg.svg)](https://crates.io/crates/axmg)
 [![Docs.rs](https://docs.rs/axmg/badge.svg)](https://docs.rs/axmg)
+[![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-ghcr.io-blue?logo=github)](https://github.com/dchrnv/axmg/pkgs/container/axmg)
 [![CI](https://github.com/dchrnv/axmg/actions/workflows/ci.yml/badge.svg)](https://github.com/dchrnv/axmg/actions/workflows/ci.yml)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
 [![Rust: 2024](https://img.shields.io/badge/Rust-2024-orange.svg)](https://www.rust-lang.org)
