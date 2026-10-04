@@ -33,7 +33,7 @@ pub fn is_descendant(store: &Store, ancestor: TokenId, descendant: TokenId) -> b
 }
 
 /// Конфигурация ассоциативного вспоминания (`recall`).
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
 pub struct RecallConfig {
     /// Максимальное число возвращаемых ассоциаций. Default: 5
     pub limit: usize,
@@ -63,7 +63,7 @@ impl Default for RecallConfig {
 }
 
 /// Ассоциированный концепт/воспоминание.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 pub struct RecallCandidate {
     pub token: TokenId,
     pub bytes: Vec<u8>,
@@ -75,7 +75,7 @@ pub struct RecallCandidate {
 }
 
 /// Результат выполнения операции `recall`.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
 pub struct RecallResult {
     pub query_tokens: Vec<TokenId>,
     pub candidates: Vec<RecallCandidate>,

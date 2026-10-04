@@ -1,6 +1,29 @@
+//! # axmg-kernel (`shelf`)
+//!
+//! Детерминированный движок ассоциативной памяти на базе Merkle DAG.
+//!
+//! Библиотека предоставляет высокоуровневый фасад [`Axmg`] для встраивания локальной памяти
+//! в агентные системы, микросервисы и приложения без использования векторных баз данных и эмбеддингов.
+//!
+//! ## Быстрый старт
+//!
+//! ```rust
+//! use shelf::Axmg;
+//!
+//! let mut memory = Axmg::in_memory();
+//! let report = memory.ingest("Rust and Merkle DAG memory").unwrap();
+//! assert_eq!(report.revolution, 1);
+//!
+//! let recall = memory.recall("Merkle", Some(3));
+//! println!("Ассоциации: {}", recall.context_string);
+//! ```
+//!
+//! Для глубокого руководства по интеграции см. `docs/LIBRARY_GUIDE.md`.
+
 pub mod context;
 pub mod cooc;
 pub mod death;
+pub mod engine;
 pub mod inverted;
 pub mod merge;
 pub mod ppmi;
@@ -18,6 +41,10 @@ pub mod recall;
 pub mod recognizer;
 
 pub use death::{DeathLog, FocusConcept, FocusEvent, FocusSet, MarkOutcome, WeightCutOutcome};
+pub use engine::{
+    Axmg, AxmgBuilder, AxmgConfig, AxmgError, EngineStats, IngestReport, RecallResponse,
+    TimelineEntry,
+};
 pub use merge::Sequence;
 pub use persist::{load, load_all, save, save_all, LoadError};
 pub use recall::{recall, recall_from_csr, RecallCandidate, RecallConfig, RecallResult};

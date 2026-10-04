@@ -113,7 +113,7 @@ pub fn s_growth(store: &Store, input: &[u8], threshold: u64, tie_break: TieBreak
 }
 
 /// Вердикт о характере входящих данных по метрикам удивления.
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
 pub enum SurpriseVerdict {
     /// Высокая эффективность сжатия, нет прироста словаря (знакомый контекст).
     Familiar,
@@ -146,7 +146,7 @@ pub fn classify_surprise(s_static: f64, s_growth: f64) -> SurpriseVerdict {
     }
 }
 
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, serde::Serialize, serde::Deserialize)]
 pub struct SurpriseReport {
     pub s_static: f64,
     pub s_growth: f64,

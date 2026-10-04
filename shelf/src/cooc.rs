@@ -118,9 +118,9 @@ pub struct Csr {
     pub row_ptr: Vec<u32>,
     pub col_idx: Vec<TokenId>,
     pub values: Vec<u64>,
-    /// row_marginal[t] = сумма весов всех связей (t, *) — p(a) числитель.
+    /// `row_marginal[t]` = сумма весов всех связей (t, *) — p(a) числитель.
     pub row_marginal: HashMap<TokenId, u64>,
-    /// col_marginal[t] = сумма весов всех связей (*, t) — p(b) числитель.
+    /// `col_marginal[t]` = сумма весов всех связей (*, t) — p(b) числитель.
     pub col_marginal: HashMap<TokenId, u64>,
     pub total_weight: u64,
 }

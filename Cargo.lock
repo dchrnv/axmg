@@ -366,6 +366,8 @@ dependencies = [
  "blake2",
  "memmap2",
  "redb",
+ "serde",
+ "serde_json",
  "sha2",
 ]
 

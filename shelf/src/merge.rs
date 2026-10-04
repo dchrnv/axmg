@@ -1,5 +1,5 @@
-//! Шаг 2: SoA рабочей последовательности (Vec<u32> id + параллельный
-//! Vec<u32> levels — не лезть в Store за уровнем на каждом шаге горячего
+//! Шаг 2: SoA рабочей последовательности (`Vec<u32>` id + параллельный
+//! `Vec<u32>` levels — не лезть в Store за уровнем на каждом шаге горячего
 //! цикла).
 //!
 //! Шаг 3: счётчик пар на связном списке. При слиянии обновляются только
@@ -88,7 +88,7 @@ fn insert_occurrence(occurrences: &mut HashMap<Pair, BTreeSet<usize>>, pair: Pai
 }
 
 /// Как сортировать кандидатов волны при равной частоте.
-#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, serde::Serialize, serde::Deserialize)]
 pub enum TieBreak {
     /// Принятый по умолчанию выбор шага 3: порядок рождения токена
     /// (u32-индекс интернирования). НЕ нейтральный шум — систематически

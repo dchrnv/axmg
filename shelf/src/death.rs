@@ -84,7 +84,7 @@ pub struct WeightCutOutcome {
 }
 
 /// Концепт, находящийся в активном фокусе ядра памяти.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 pub struct FocusConcept {
     pub token_id: TokenId,
     pub text: String,
@@ -93,7 +93,7 @@ pub struct FocusConcept {
 }
 
 /// Неизменяемый снимок активного фокуса для неблокирующего (lock-free) чтения.
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 pub struct FocusSet {
     pub revolution: u32,
     pub tokens: HashSet<TokenId>,
