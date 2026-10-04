@@ -35,7 +35,7 @@ jobs:
         run: RUSTDOCFLAGS="-D warnings" cargo doc --workspace --no-deps
 
       - name: Run quickstart example
-        run: cargo run -p shelf --example quickstart
+        run: cargo run -p axmg --example quickstart
 
       - name: Build release binaries
         run: cargo build --release --workspace

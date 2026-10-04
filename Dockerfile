@@ -1,10 +1,10 @@
 # Multi-stage build for axmg
-FROM rust:1.85-slim as builder
+FROM rust:1-slim as builder
 
 WORKDIR /usr/src/axmg
 COPY . .
 
-RUN cargo build --release --workspace
+RUN cargo build --release --bin harness
 
 # Minimal runtime image
 FROM debian:bookworm-slim

@@ -16,7 +16,7 @@
 
 ```toml
 [dependencies]
-shelf = { path = "../shelf" }
+axmg = "0.1.0"
 ```
 
 ### 1. Минимальный пример (In-Memory)
@@ -51,7 +51,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 Запустить готовый пример из репозитория:
 ```bash
-cargo run -p shelf --example quickstart
+cargo run -p axmg --example quickstart
 ```
 
 ---

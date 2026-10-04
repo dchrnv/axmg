@@ -38,7 +38,7 @@ axmg = "0.1.0"
 ### Basic Usage
 
 ```rust
-use shelf::Axmg;
+use axmg::Axmg;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // 1. Initialize an in-memory engine (or use Axmg::open("path.redb") for ACID disk storage)
@@ -66,7 +66,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 Run the built-in quickstart example:
 ```bash
-cargo run -p shelf --example quickstart
+cargo run -p axmg --example quickstart
 ```
 
 ---
@@ -133,7 +133,7 @@ cargo run -p shelf --example quickstart
 - [Development Guide](DEV_GUIDE.md) — engineering rules and verification standards.
 - **Local Rustdoc HTML Wiki:**
   ```bash
-  cargo doc -p shelf --no-deps --open
+  cargo doc -p axmg --no-deps --open
   ```
 
 ---
