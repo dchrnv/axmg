@@ -4,7 +4,7 @@
 //! как независимую внешнюю зависимость через высокоуровневый фасад `Axmg`.
 
 use serde::Deserialize;
-use shelf::Axmg;
+use axmg::Axmg;
 
 /// JSON-запрос от внешнего мира к ядру.
 #[derive(Debug, Deserialize)]

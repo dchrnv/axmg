@@ -16,11 +16,11 @@
 //! Зачётный прогон — «Стихи 2025.md», корпус, не подсматривавшийся под
 //! эту метрику; порог ×10 зафиксирован до прогона на нём.
 
-use shelf::context::Window;
-use shelf::merge::TieBreak;
-use shelf::ppmi::{self, DEFAULT_FREQUENCY_FLOOR, DEFAULT_PPMI_THRESHOLD};
-use shelf::second_shelf::accumulate_windowed_per_generation;
-use shelf::{read_and_touch, Sequence, Store, BIRTH_THRESHOLD};
+use axmg::context::Window;
+use axmg::merge::TieBreak;
+use axmg::ppmi::{self, DEFAULT_FREQUENCY_FLOOR, DEFAULT_PPMI_THRESHOLD};
+use axmg::second_shelf::accumulate_windowed_per_generation;
+use axmg::{read_and_touch, Sequence, Store, BIRTH_THRESHOLD};
 use std::path::Path;
 
 const PERMUTATION_SEED: u64 = 0xA4_5EED;

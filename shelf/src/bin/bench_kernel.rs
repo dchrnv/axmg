@@ -1,9 +1,9 @@
-use shelf::death::DeathLog;
-use shelf::merge::{Sequence, TieBreak};
-use shelf::recall::{recall, RecallConfig};
-use shelf::recognizer::StreamingRecognizer;
-use shelf::store::{Store, TokenId};
-use shelf::wheel::WheelState;
+use axmg::death::DeathLog;
+use axmg::merge::{Sequence, TieBreak};
+use axmg::recall::{recall, RecallConfig};
+use axmg::recognizer::StreamingRecognizer;
+use axmg::store::{Store, TokenId};
+use axmg::wheel::WheelState;
 use std::path::Path;
 use std::time::Instant;
 
@@ -63,7 +63,7 @@ fn main() {
     let train_slice = &gita_bytes[..gita_bytes.len().min(100_000)];
     let ids: Vec<TokenId> = train_slice.iter().map(|&b| store.intern(0, &[b as u32])).collect();
     let seq = Sequence::from_ids(&store, ids);
-    let (out_seq, _) = shelf::merge::run_traced(&mut store, seq, 2, TieBreak::BirthOrder);
+    let (out_seq, _) = axmg::merge::run_traced(&mut store, seq, 2, TieBreak::BirthOrder);
     println!("Стор инициализирован: {} Merkle-токенов, обучающая свёртка: {} -> {} токенов", store.len(), train_slice.len(), out_seq.len());
 
     let chunk_sizes = [64, 512, 4096, 65536, gita_bytes.len()];
@@ -196,11 +196,11 @@ fn main() {
     }
 
     let t_save = Instant::now();
-    shelf::persist::save_all(&wheel.store, &death_log, &test_db).expect("save_all");
+    axmg::persist::save_all(&wheel.store, &death_log, &test_db).expect("save_all");
     let save_ms = t_save.elapsed().as_secs_f64() * 1000.0;
 
     let t_load = Instant::now();
-    let (loaded_store, loaded_dl) = shelf::persist::load_all(&test_db).expect("load_all");
+    let (loaded_store, loaded_dl) = axmg::persist::load_all(&test_db).expect("load_all");
     let load_ms = t_load.elapsed().as_secs_f64() * 1000.0;
 
     let db_size_kb = std::fs::metadata(&test_db).map(|m| m.len() as f64 / 1024.0).unwrap_or(0.0);

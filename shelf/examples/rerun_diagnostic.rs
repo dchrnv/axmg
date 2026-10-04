@@ -1,5 +1,5 @@
-use shelf::merge::{self, Sequence, TieBreak};
-use shelf::{read_and_touch, Store, BIRTH_THRESHOLD};
+use axmg::merge::{self, Sequence, TieBreak};
+use axmg::{read_and_touch, Store, BIRTH_THRESHOLD};
 use std::path::Path;
 
 fn main() {

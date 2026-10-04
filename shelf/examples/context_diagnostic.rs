@@ -1,7 +1,7 @@
-use shelf::context::{ContextExtractor, Neighbor, Parent, Window};
-use shelf::cooc::CooAccumulator;
-use shelf::merge::{self, TieBreak};
-use shelf::{read_and_touch, Sequence, Store, BIRTH_THRESHOLD};
+use axmg::context::{ContextExtractor, Neighbor, Parent, Window};
+use axmg::cooc::CooAccumulator;
+use axmg::merge::{self, TieBreak};
+use axmg::{read_and_touch, Sequence, Store, BIRTH_THRESHOLD};
 use std::path::Path;
 
 fn main() {

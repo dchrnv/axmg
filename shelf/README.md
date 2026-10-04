@@ -22,7 +22,7 @@ shelf = { path = "../shelf" }
 ### 1. Минимальный пример (In-Memory)
 
 ```rust
-use shelf::Axmg;
+use axmg::Axmg;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // 1. Создаем движок в оперативной памяти
@@ -61,7 +61,7 @@ cargo run -p shelf --example quickstart
 ### Режим 1: Полная персистентность (ACID на `redb`)
 
 ```rust
-use shelf::Axmg;
+use axmg::Axmg;
 
 // Открывает существующую базу или создает новую по указанному пути.
 // Таймлайн автоматически пишется рядом в "agent_memory_timeline.jsonl".
@@ -74,7 +74,7 @@ memory.ingest("Персистентное событие")?;
 ### Режим 2: Гибкая конфигурация через `AxmgBuilder`
 
 ```rust
-use shelf::{Axmg, AxmgBuilder, TieBreak};
+use axmg::{Axmg, AxmgBuilder, TieBreak};
 
 let memory = AxmgBuilder::new()
     .db_path("custom_store.redb")

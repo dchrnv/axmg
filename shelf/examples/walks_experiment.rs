@@ -14,12 +14,12 @@
 //! майнингового заявления, пачка A закрывается на G-A1′+G-A3), не повод
 //! для новой правки.
 
-use shelf::context::Window;
-use shelf::merge::TieBreak;
-use shelf::ppmi::{DEFAULT_FREQUENCY_FLOOR, DEFAULT_PPMI_THRESHOLD};
-use shelf::second_shelf::accumulate_windowed_per_generation;
-use shelf::walks::mine_via_walk_ppmi;
-use shelf::{read_and_touch, Sequence, Store, BIRTH_THRESHOLD};
+use axmg::context::Window;
+use axmg::merge::TieBreak;
+use axmg::ppmi::{DEFAULT_FREQUENCY_FLOOR, DEFAULT_PPMI_THRESHOLD};
+use axmg::second_shelf::accumulate_windowed_per_generation;
+use axmg::walks::mine_via_walk_ppmi;
+use axmg::{read_and_touch, Sequence, Store, BIRTH_THRESHOLD};
 use std::path::Path;
 
 const WALK_SEED_REAL: u64 = 0xA5_5EED;

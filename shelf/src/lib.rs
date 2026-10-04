@@ -8,7 +8,7 @@
 //! ## Быстрый старт
 //!
 //! ```rust
-//! use shelf::Axmg;
+//! use axmg::Axmg;
 //!
 //! let mut memory = Axmg::in_memory();
 //! let report = memory.ingest("Rust and Merkle DAG memory").unwrap();

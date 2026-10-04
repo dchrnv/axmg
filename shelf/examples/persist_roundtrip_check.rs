@@ -9,8 +9,8 @@
 //!    тот путь, где живёт весь класс off-by-one на границе
 //!    "already_persisted". Сверяются побитово.
 
-use shelf::merge::TieBreak;
-use shelf::{merge, persist, read_and_touch, Sequence, Store, TokenId, BIRTH_THRESHOLD};
+use axmg::merge::TieBreak;
+use axmg::{merge, persist, read_and_touch, Sequence, Store, TokenId, BIRTH_THRESHOLD};
 use std::path::Path;
 use std::time::Instant;
 

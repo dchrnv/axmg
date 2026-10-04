@@ -3,6 +3,18 @@
 version = 4
 
 [[package]]
+name = "axmg"
+version = "0.1.0"
+dependencies = [
+ "blake2",
+ "memmap2",
+ "redb",
+ "serde",
+ "serde_json",
+ "sha2",
+]
+
+[[package]]
 name = "blake2"
 version = "0.10.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -70,9 +82,9 @@ dependencies = [
 name = "harness"
 version = "0.1.0"
 dependencies = [
+ "axmg",
  "serde",
  "serde_json",
- "shelf",
 ]
 
 [[package]]
@@ -181,18 +193,6 @@ dependencies = [
  "cfg-if",
  "cpufeatures",
  "digest",
-]
-
-[[package]]
-name = "shelf"
-version = "0.1.0"
-dependencies = [
- "blake2",
- "memmap2",
- "redb",
- "serde",
- "serde_json",
- "sha2",
 ]
 
 [[package]]

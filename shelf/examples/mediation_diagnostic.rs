@@ -1,12 +1,12 @@
-use shelf::context::Window;
-use shelf::merge::TieBreak;
-use shelf::ppmi::{self, DEFAULT_FREQUENCY_FLOOR, DEFAULT_PPMI_THRESHOLD};
-use shelf::second_shelf::accumulate_windowed_per_generation;
-use shelf::walks::WalkGraph;
-use shelf::{read_and_touch, Sequence, Store, BIRTH_THRESHOLD};
+use axmg::context::Window;
+use axmg::merge::TieBreak;
+use axmg::ppmi::{self, DEFAULT_FREQUENCY_FLOOR, DEFAULT_PPMI_THRESHOLD};
+use axmg::second_shelf::accumulate_windowed_per_generation;
+use axmg::walks::WalkGraph;
+use axmg::{read_and_touch, Sequence, Store, BIRTH_THRESHOLD};
 use std::path::Path;
 
-fn report(label: &str, store: &Store, valid_links: &[shelf::ppmi::PpmiEntry]) {
+fn report(label: &str, store: &Store, valid_links: &[axmg::ppmi::PpmiEntry]) {
     let graph = WalkGraph::build(store, valid_links, 2);
     let nodes = graph.nodes();
     let with_cooc = nodes.iter().filter(|&&n| graph.cooccurrence_degree(n) > 0).count();

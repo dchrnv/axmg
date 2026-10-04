@@ -5,9 +5,9 @@
 //! содержательная часть: множество достижимых токенов детерминировано
 //! и воспроизводимо из лога, не из побочного состояния.
 
-use shelf::death::{self, DeathLog, ROOT_WINDOW_REVOLUTIONS};
-use shelf::merge::TieBreak;
-use shelf::wheel::{WheelState, REVOLUTION_CHUNK_BYTES};
+use axmg::death::{self, DeathLog, ROOT_WINDOW_REVOLUTIONS};
+use axmg::merge::TieBreak;
+use axmg::wheel::{WheelState, REVOLUTION_CHUNK_BYTES};
 use std::path::Path;
 use std::time::Instant;
 

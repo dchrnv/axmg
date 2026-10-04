@@ -21,11 +21,11 @@
 //! корневого окна по построению (обучение прошло весь train целиком,
 //! начало — самое старое). Гейта не меняет, не входит в его вердикт.
 
-use shelf::death::DeathLog;
-use shelf::merge::TieBreak;
-use shelf::rng::shuffle;
-use shelf::surprise::{recognized_length, s_static_focused};
-use shelf::wheel::{WheelState, REVOLUTION_CHUNK_BYTES};
+use axmg::death::DeathLog;
+use axmg::merge::TieBreak;
+use axmg::rng::shuffle;
+use axmg::surprise::{recognized_length, s_static_focused};
+use axmg::wheel::{WheelState, REVOLUTION_CHUNK_BYTES};
 use std::path::Path;
 
 const HELD_OUT_FRACTION: f64 = 0.10;

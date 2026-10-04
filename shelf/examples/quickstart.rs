@@ -2,7 +2,7 @@
 //!
 //! Запуск: `cargo run -p shelf --example quickstart`
 
-use shelf::Axmg;
+use axmg::Axmg;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("============================================================");

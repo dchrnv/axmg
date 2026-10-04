@@ -10,8 +10,8 @@
 //! Пути — константы, правятся руками между прогонами (как в python-эталоне,
 //! spec п.0.4: без CLI-аргументов).
 
-use shelf::merge::TieBreak;
-use shelf::{merge, read_and_touch, Sequence, Store, TokenId, BIRTH_THRESHOLD};
+use axmg::merge::TieBreak;
+use axmg::{merge, read_and_touch, Sequence, Store, TokenId, BIRTH_THRESHOLD};
 use std::collections::HashMap;
 use std::path::Path;
 
